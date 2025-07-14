@@ -1,0 +1,89 @@
+.detalle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 40px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.detalle-container img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.detalle-info {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detalle-info h3 {
+  font-size: 28px;
+  font-family: "Playfair Display", serif;
+  color: #7c2e78;
+}
+
+.detalle-info p {
+  font-size: 18px;
+  color: #333;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cantidad-control button {
+  padding: 5px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #e7d1e7;
+  color: #7c2e78;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cantidad-control button:hover {
+  background-color: #d4a9d4;
+}
+
+.cantidad-control span {
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-agregar {
+  margin-top: 15px;
+  background-color: #7c2e78;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #62215f;
+}
+
+.titulo-seccion {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: #7c2e78;
+  text-align: center;
+  margin-top: 40px;
+}
