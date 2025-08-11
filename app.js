@@ -98,7 +98,7 @@ function verproducto(idproducto) {
   }
 }
 
-cargarproducto();
+
 
 
 
@@ -123,7 +123,7 @@ function mostrarProductos(lista) {
   });
 }
 
-mostrarProductos(productos);
+
 
 document.querySelector('#searchbar input[type="search"]').addEventListener("keydown", function(e) {
   if (e.key === "Enter") {

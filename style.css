@@ -237,3 +237,31 @@ input{
   background: #f6eef6;
   color: #9d3aa4;
 }
+
+/* Sticky footer con flexbox */
+/* filepath: c:\Users\Mano Amiga\Documents\M-N-Sestua-Sanabria\styles.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Footer siempre abajo */
+footer {
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  padding: 1em 0;
+  /* Puedes ajustar estilos según tu diseño */
+}
