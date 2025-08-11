@@ -24,6 +24,7 @@ nav{
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: start;
+    align-items: center;
 }
 #s2{
     display: grid;
@@ -100,18 +101,24 @@ footer {
 }
 
 .fila-productos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-bottom: 40px;
+  justify-items: center;
+  background: #d6d3d6;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(124, 46, 120, 0.08);
+  padding: 35px 25px;
+  min-height: 220px;
+  transition: box-shadow 0.3s;
 }
 
 .producto {
   width: 160px;
   text-align: center;
   font-family: "Cormorant Garamond", serif;
-  background-color: #fdf9fd;
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -146,4 +153,87 @@ footer {
 a{
     text-decoration: none;
     color: currentColor;
+}
+#searchbar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: #fdf9fd;
+}
+input{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 12px;
+    color: #333;
+}
+.login-container {
+  max-width: 350px;
+  margin: 60px auto 40px auto;
+  background: #f6eef6;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(124, 46, 120, 0.10);
+  padding: 35px 30px;
+  text-align: center;
+}
+
+.login-container h2 {
+  font-family: "Playfair Display", serif;
+  color: #7c2e78;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form label {
+  font-family: "Cormorant Garamond", serif;
+  color: #7c2e78;
+  font-size: 16px;
+  text-align: left;
+}
+
+.login-form input {
+  padding: 8px 12px;
+  border: 1px solid #d6d3d6;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.btn-login {
+  background: #7c2e78;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-login:hover {
+  background: #9d3aa4;
+}
+.btn-alt {
+  background: #fff;
+  color: #7c2e78;
+  border: 2px solid #7c2e78;
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-alt:hover {
+  background: #f6eef6;
+  color: #9d3aa4;
 }
