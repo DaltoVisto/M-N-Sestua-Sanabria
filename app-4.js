@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const toggleBtn = document.getElementById('toggle-btn');
   const formTitle = document.getElementById('form-title');
   const loginBtn = document.getElementById('login-btn');
+  const passwordRepeatLabel = document.querySelector('label[for="passwordrepeat"]');
+  const passwordRepeatInput = document.getElementById('passwordrepeat');
   let modoRegistro = false;
+
+  // Oculta el campo "Repetir Contraseña" al iniciar
+  passwordRepeatLabel.style.display = "none";
+  passwordRepeatInput.style.display = "none";
 
   toggleBtn.addEventListener('click', () => {
     modoRegistro = !modoRegistro;
@@ -13,10 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
       formTitle.textContent = "Registrarse";
       loginBtn.textContent = "Registrarse";
       toggleBtn.textContent = "¿Ya tienes cuenta? Inicia sesión";
+      passwordRepeatLabel.style.display = "";
+      passwordRepeatInput.style.display = "";
     } else {
       formTitle.textContent = "Iniciar Sesión";
       loginBtn.textContent = "Ingresar";
       toggleBtn.textContent = "¿No tienes cuenta? Registrate";
+      passwordRepeatLabel.style.display = "none";
+      passwordRepeatInput.style.display = "none";
     }
   });
 
@@ -24,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     const usuario = document.getElementById('usuario').value;
     const password = document.getElementById('password').value;
+    const passwordrepeat = document.getElementById('passwordrepeat').value;
 
     // Recupera usuarios existentes o crea array vacío
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
@@ -32,6 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
       // Verifica si el usuario ya existe
       if (usuarios.some(u => u.usuario === usuario)) {
         alert('El usuario ya existe. Elige otro nombre.');
+        return;
+      }
+      // Verifica que las contraseñas coincidan
+      if (password !== passwordrepeat) {
+        alert('Las contraseñas no coinciden.');
         return;
       }
       // Agrega nuevo usuario
@@ -52,3 +68,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+document.getElementById('show-passwords').addEventListener('change', function() {
+    const pass = document.getElementById('password');
+    const passRepeat = document.getElementById('passwordrepeat');
+    const type = this.checked ? 'text' : 'password';
+    pass.type = type;
+    passRepeat.type = type;
+})
