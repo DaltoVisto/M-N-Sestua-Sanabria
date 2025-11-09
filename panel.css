@@ -166,3 +166,38 @@ footer {
 .footer-copy p {
   margin: 3px 0;
 }
+#productos-lista {
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+#productos-lista table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#productos-lista th,
+#productos-lista td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#productos-lista img {
+    max-width: 50px;
+    height: auto;
+}
+
+#productos-lista button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#productos-lista button:hover {
+    background-color: #cc0000;
+}
+

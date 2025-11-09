@@ -1,70 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Control</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="panel.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="panel.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet" />
-</head>
-<body>
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <section id="s1">
-                <span class="material-symbols-outlined" title="Menú próximamente">menu</span>
-                <div id="searchbar">
-                    <span class="material-symbols-outlined">search</span>
-                </div>
-            </section>
-            <section id="s2">
-                <a href="index.html"><h1>M&N</h1></a>
-            </section>
-            <section id="s3">
-                <a href="usuario.html"><div class="bordeic">
-                    Usuario<span class="material-symbols-outlined">login</span>
-                </div></a>
-                <a href="carrito.html"><span class="material-symbols-outlined">shopping_cart</span></a>
-            </section>
-        </nav>
+      <nav>
+        <section id="s1">
+          <div id="searchbar">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+        </section>
+        <section id="s2">
+          <a href="index.html"><h1>M&N</h1></a>
+        </section>
+        <section id="s3">
+          <a href="usuario.html"
+            ><div class="bordeic">
+              Usuario<span class="material-symbols-outlined">login</span>
+            </div></a
+          >
+          <a href="carrito.html"
+            ><span class="material-symbols-outlined">shopping_cart</span></a
+          >
+        </section>
+      </nav>
     </header>
     <main id="boxpaneldecontrol">
-        <h1>Panel de Control</h1>
-        <div id="boxpanelingresar">
-            <label for="inpproducto">Producto:</label>
-            <input type="text" id="inpproducto">
-            <label for="inpdescripcion">Descripción:</label>
-            <input type="text" id="inpdescripcion">
-            <label for="inpprecio">Precio:</label>
-            <input type="text" id="inpprecio">
-            <label for="inpstock">Stock:</label>
-            <input type="text" id="inpstock">
-            <label for="inpimagen">Imagen</label>
-            <input type="file" id="inpimagen">
-            <button>Ingresar</button>
-        </div>
+      <h1>Panel de Control</h1>
+      <div id="boxpanelingresar">
+        <label for="inpproducto">Producto:</label>
+        <input type="text" id="inpproducto" />
+        <label for="inpdescripcion">Descripción:</label>
+        <input type="text" id="inpdescripcion" />
+        <label for="inpprecio">Precio:</label>
+        <input type="text" id="inpprecio" />
+        <label for="inpstock">Stock:</label>
+        <input type="text" id="inpstock" />
+        <label for="inpimagen">Imagen</label>
+        <input type="file" id="inpimagen" />
+        <button>Ingresar</button>
+      </div>
+      <div id="productos-lista">
+        <h2>Productos Existentes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="productos-tbody"></tbody>
+        </table>
+      </div>
     </main>
-    <footer>
-        <div class="footer-info">
-            <p>Av Advinciula 912, Pilar, Buenos Aires</p>
-            <p>ungamalxd@gmail.com</p>
-            <p>+54 9 1154379182</p>
-        </div>
-        <div class="footer-redes">
-            <a href="#"><span class="material-symbols-outlined">music_note</span></a>
-            <a href="#"><span class="material-symbols-outlined">photo_camera</span></a>
-            <a href="#"><span class="material-symbols-outlined">call</span></a>
-        </div>
-        <div class="footer-copy">
-            <p>@ copyright 2025 Tienda M&N</p>
-            <p>Todos los derechos reservados.</p>
-        </div>
-    </footer>
-    <script src="panel.js"></script>
-</body>
+
+    <script src="panel.js" type="module"></script>
+  </body>
 </html>

@@ -13,22 +13,24 @@ document.addEventListener("DOMContentLoaded", function() {
   passwordRepeatLabel.style.display = "none";
   passwordRepeatInput.style.display = "none";
 
-  toggleBtn.addEventListener('click', () => {
-    modoRegistro = !modoRegistro;
-    if (modoRegistro) {
-      formTitle.textContent = "Registrarse";
-      loginBtn.textContent = "Registrarse";
-      toggleBtn.textContent = "¿Ya tienes cuenta? Inicia sesión";
-      passwordRepeatLabel.style.display = "";
-      passwordRepeatInput.style.display = "";
-    } else {
-      formTitle.textContent = "Iniciar Sesión";
-      loginBtn.textContent = "Ingresar";
-      toggleBtn.textContent = "¿No tienes cuenta? Registrate";
-      passwordRepeatLabel.style.display = "none";
-      passwordRepeatInput.style.display = "none";
-    }
-  });
+ toggleBtn.addEventListener('click', () => {
+  modoRegistro = !modoRegistro;
+  if (modoRegistro) {
+    formTitle.textContent = "Registrarse";
+    loginBtn.textContent = "Registrarse";
+    toggleBtn.textContent = "¿Ya tienes cuenta? Inicia sesión";
+    passwordRepeatLabel.style.display = "";
+    passwordRepeatInput.style.display = "";
+    passwordRepeatInput.required = true; // ✅ se activa en modo registro
+  } else {
+    formTitle.textContent = "Iniciar Sesión";
+    loginBtn.textContent = "Ingresar";
+    toggleBtn.textContent = "¿No tienes cuenta? Registrate";
+    passwordRepeatLabel.style.display = "none";
+    passwordRepeatInput.style.display = "none";
+    passwordRepeatInput.required = false; // ✅ se desactiva en modo login
+  }
+});
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
