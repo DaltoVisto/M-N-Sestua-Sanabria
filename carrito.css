@@ -1,10 +1,34 @@
+#arrow {
+  cursor: pointer;
+  font-size: 32px;
+  color: #7c2e78;
+  margin-right: 10px;
+  align-self: center;
+  border: 1px solid ;
+  border-radius: 5px;
+  background-color: #e97ce481;
+}
+
+#arrow a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .titulo-seccion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Playfair Display", serif;
   font-size: 28px;
   color: #7c2e78;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.titulo-seccion h2 {
+  margin: 0;
 }
 
 .carrito-contenido {
@@ -65,7 +89,25 @@ button.eliminar:hover {
   background-color: #b964a2;
 }
 
+/* ============================================
+   RESPONSIVE - TABLETS (768px)
+   ============================================ */
 @media screen and (max-width: 768px) {
+  .titulo-seccion {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  #arrow {
+    font-size: 28px;
+  }
+
+  .carrito-contenido {
+    padding: 0 15px 40px;
+  }
+
+  /* Convertir tabla en cards para móvil */
   table,
   thead,
   tbody,
@@ -79,30 +121,88 @@ button.eliminar:hover {
     display: none;
   }
 
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
   tr {
-    margin-bottom: 20px;
     background-color: #fdf9fd;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(124, 46, 120, 0.1);
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   td {
-    padding: 10px;
+    padding: 8px 0;
     font-size: 15px;
     border: none;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   td::before {
     content: attr(data-label);
     font-weight: bold;
     color: #7c2e78;
+    min-width: 120px;
   }
 
   tbody img {
     width: 100px;
-    margin-bottom: 10px;
+    height: auto;
+    margin-right: auto;
+  }
+
+  /* Primera celda (imagen) sin label */
+  td:first-child::before {
+    content: "";
+  }
+
+  button.eliminar {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MÓVILES (480px)
+   ============================================ */
+@media screen and (max-width: 480px) {
+  .titulo-seccion {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  #arrow {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+
+  .carrito-contenido {
+    padding: 0 10px 30px;
+  }
+
+  tr {
+    padding: 12px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  td::before {
+    font-size: 13px;
+    min-width: 100px;
+  }
+
+  tbody img {
+    width: 80px;
   }
 }

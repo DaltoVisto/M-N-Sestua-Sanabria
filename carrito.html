@@ -32,14 +32,22 @@
                 <a href="usuario.html"><div class="bordeic">
                     Usuario<span class="material-symbols-outlined">login</span>
                 </div></a>
-                <a href="carrito.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+                     <a href="carrito.html" class="carrito-icono">
+                 <span class="material-symbols-outlined">shopping_cart</span>
+                 <span id="carrito-count" class="carrito-count">0</span>
+                </a>
             </section>
         </nav>
     </header>
 
 
   <main>
-    <h2 class="titulo-seccion">Carrito</h2>
+    <div class="titulo-seccion">
+      <span class="material-symbols-outlined" id="arrow"><a href="index.html">arrow_back</a>
+
+</span>
+      <h2 >Carrito</h2>
+    </div>
     <div class="carrito-contenido">
       <table>
         <thead>
@@ -56,8 +64,12 @@
        
         </tbody>
       </table>
-    </div>
+  
   </main>
+      <div class="total-final-container">
+  <h3>Total a pagar: $<span id="total-final">0</span></h3>
+</div>
+    </div>
 
   
   <footer>
@@ -78,5 +90,6 @@
   </footer>
 
   <script src="app-3.js"></script>
+  <script src="carrito.js"></script>
 </body>
 </html>

@@ -44,31 +44,34 @@ function restarproducto() {
 
 function cargarcarrito() {
   if (cantidad > 0) {
-    // Recuperar carrito actual o crear uno vacío
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    // Verificar si el producto ya está en el carrito
     let index = carrito.findIndex(p => p.id === productodetalle.id);
 
     if (index === -1) {
-      // No existe, agrego el producto con cantidad
       carrito.push({
         ...productodetalle,
         cantidad: cantidad
       });
     } else {
-      // Ya existe, sumo la cantidad y controlo stock
       carrito[index].cantidad += cantidad;
+
       if (carrito[index].cantidad > productodetalle.stock) {
         carrito[index].cantidad = productodetalle.stock;
         alert("Cantidad ajustada al stock disponible.");
       }
     }
+
     localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // 🔥 Actualiza el numerito del carrito
+    actualizarContadorCarrito();
+
     window.location.href = "carrito.html";
   } else {
     alert("Seleccioná al menos 1 unidad para continuar.");
   }
 }
+
 
 cargarproducto();
